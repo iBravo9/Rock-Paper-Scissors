@@ -1,44 +1,37 @@
-// Begin a function called "computerPlay"
-//computerPlay will randomly return 'Rock", 'Paper', or 'Scissors'. 
 
-//let random = Math.floor(Math.random()*3);
-//this variable random outputs 0-3.
-//Create a function that inputes 0-3 with an output of rock, paper, or scissors.
- 
+ //define choices in global scope, to be used by computer and human
 const choices = ["rock", "paper", "scissors"];
 
 function computerChoice() {
     return choices[Math.floor(Math.random()*choices.length)];
 }
+console.log (computerChoice());
 
 //STEP:2 
 // declare these variables in a global scope so that they can be picked up
-
 //get player choice 
-function playerChoice(){
-    //we need input, and we need to put it in here
-    let input="rock";
-    // let input = prompt("Type rock, paper, or scissors!");
-    //make input case insensitive
-    input = input.toLowerCase();
-    // make sure that the input is a listed choice
-    let check = validateInput(input);
-    if (check === true) {
-        console.log("player choice was: " +input);
-    } else {
-        throw new Error(`Invalid User Input`);
-    }
-    return input;
-}
-//this function will check if input is an existing choice
-function validateInput(choice) {
-    if (choice.includes(choice)) {
-        return true;
-    }else {
-        return false;
-    } 
-}
-    
+// grab data from button, 
+//if button data = rock, let choiceP= rock
+//if button data = paper, let choiceP=paper,
+//if button data = scissors, let choiceP= scissors,
+//return choiceP as rock, or paper, or scissors
+
+function playerChoice () {
+let rockButton = document.getElementById("rockBtn");
+    rockButton.addEventListener('click',function (e){
+        let choiceP= "rock";
+    })
+let paperButton = document.getElementById("paperBtn");
+    paperButton.addEventListener('click',function (e){
+        let choiceP="paper";
+    })
+let scissorsButton = document.getElementById("scissorsBtn");
+    scissorsButton.addEventListener('click',function (e){
+    let choiceP = "scissors";
+    })  
+};
+let choiceP= playerChoice();
+ 
 function getPlayerScore(choiceC,choiceP){
     console.log({ choiceC, choiceP });
     if (choiceP===choiceC) {
@@ -56,14 +49,15 @@ function getPlayerScore(choiceC,choiceP){
             return -1;
     }
 }
-//Take player input, and computer choice, compare them and return a winner
+//Take choiceC and choiceP and return roundPoints back to program 
 function playRound () {
     let choiceC= computerChoice();
-    let choiceP= playerChoice();
     let roundPoints = getPlayerScore(choiceC,choiceP);
     return roundPoints;
-}
-// playRound();
+    console.log(roundPoints);
+}   
+playRound();
+/*
 
 function game() {
     let playerTotalScore = 0;
@@ -112,25 +106,7 @@ game();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//change playerChocie into button-recieving 
 
 
 
@@ -149,7 +125,7 @@ function playerThrow(playerInput) {
 
 function compareThrows(player, comp) {
     if (player === comp) {
-        return "tie";
+        return "tie"; 
     }
     if (player === 0 && comp === 2) {
         return "win";
@@ -157,5 +133,5 @@ function compareThrows(player, comp) {
     if (player < comp || (comp === 0 && player === 2)) {
         return "lose";
     }
-    return "win";
 }
+*/

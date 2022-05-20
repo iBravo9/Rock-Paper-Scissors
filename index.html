@@ -5,10 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background-color: #E1E1D7;
+        }
+        input{
+            background-color: #DCCFCF;
+            color:#220F10;
+        }
+        .web-text {
+            color: #220F10;
+        }
+        .button-box {
+            display: flex; 
+            gap: 8px; 
+            height: 30px;
+            justify-content: center;
+        }
+        h1 {
+            display: flex;
+            justify-content: center;
+        }
+        .result-box {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Rock Paper Scissors!</h1>
-    <input placeholder="Type rock, paper, or scissors" minlength="4" maxlength="8">
+    <h1 class="web-text" >Welcome to the Rock Paper Scissors Game!</h1>
+    <div class="button-box">
+    <button type=button id="rockBtn">Rock</button>
+    <button type=button id="paperBtn">Paper</button>
+    <button type=button id="scissorsBtn">Scissors</button>
+    </div>
+    <br>
+    <div class="result-box">
+        <h3 class="web-text">Your Score:</h3> <p class="humanScore web-text" ></p> <br>
+        <h3 class="web-text"> Computer Score:</h3> <p class="computerScore web-text"></p><br>
+        <h3 class="web-text">Winner is.....</h3> <p class="displayWinner web-text"></p><br>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
